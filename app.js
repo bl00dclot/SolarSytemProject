@@ -1,20 +1,54 @@
+const solarSystem = [
+    {gravity: 3.71, name: `Mercury`},
+    {gravity: 8.87, name: `Venus`},
+    {gravity: 9.81, name: `Earth`},
+    {gravity: 3.72, name: `Mars`},
+    {gravity: 23.1, name: `Jupiter`},
+    {gravity: 10.44, name: `Saturn`},
+    {gravity: 8.86, name: `Uranus`},
+    {gravity: 11.15, name: `Neptune`},
+    {gravity: 0.62, name: `Pluto`},
+    {gravity: 274, name: `Sun`},
+];
+
 function getMassPlanet() {
-    let planet;
-    let objectMass;
-    objectMass = document.querySelector(`#mass`).value;
-    planet = document.querySelector(`#planets`).value;
-    if (planet == `Mercury`) {
-        ;
-        createElements(calculateMass(3.71, objectMass), planet);
+    
+    if (document.querySelector(`.outputBox`)) {
+        document.querySelector(`.outputBox`).remove();
     }
-    //  else if (planet == `Venus`) {
-    //     calculateMass();
-    //     createElements();
-    // }
+    
+    
+    let objectMass = parseFloat(document.querySelector('#mass').value);
+    if (isNaN(objectMass) || objectMass <= 0) {
+        alert("Please enter a valid mass.");
+        return;
+    }
+    
+    
+    
+    
+    let planet = document.querySelector(`#planets`).value;
+    
+    
+    
+    solarSystem.forEach((element) => {
+        if (planet == element.name) {
+            createElements(calculateMass(element.gravity, objectMass), planet);
+        }
+    });
+    
+    
+    
+    
     function calculateMass (planetMass, objectMass) {
-            let mass = objectMass * ( planetMass / 9.81);
+            let mass = objectMass * ( planetMass / (solarSystem[2].gravity) );
             return mass;
     };
+    
+    
+    
+    
+    
     function createElements (planetMass, planet) {
         let outputBox = document.createElement(`div`);
         let outputImg = document.createElement(`img`);
@@ -29,6 +63,7 @@ function getMassPlanet() {
         document.querySelector(`.outputMass`).textContent = planetMass;
     }
 }
+
 
 
 
