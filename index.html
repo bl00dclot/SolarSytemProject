@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System Project</title>
+    <link rel="stylesheet" href="./public/style.css">
+</head>
+<body>
+    <h1>Calculate the weight of an object on a planet</h1>
+    <form id="inputMassPlanet">
+        <input  id="mass" type="text" placeholder="Enter Mass Here">
+        <select name="planets" id="planets">
+            <option value="Mercury">Mercury</option>
+            <option value="Venus">Venus</option>
+            <option value="Earth">Earth</option>
+            <option value="Mars">Mars</option>
+            <option value="Jupiter">Jupiter</option>
+            <option value="Saturn">Saturn</option>
+            <option value="Uranus">Uranus</option>
+            <option value="Neptune">Neptune</option>
+            <option value="Pluto">Pluto</option>
+            <option value="THE SUN">"THE SUN"</option>
+            <input type="button" value="Submit" onclick="getMassPlanet()">
+          </select>
+    </form>
+    <script src="./app.js" charset="UTF-8"></script>
+</body>
+</html>
