@@ -18,7 +18,7 @@ body {
     background-image: url(./img/tenor.gif);
     background-size: cover;
 }
-h1, #mass[type="text"],input[type="button"], select {
+h1, #mass[type="text"],input[type="button"], select, .outputMass {
     color: white;
 }
 h1 {
@@ -46,4 +46,18 @@ input[type="button"]:hover, #mass[type="text"]:hover, select:hover, option:hover
 }
 input[type="button"]:active {
     color: gray;
+}
+.outputBox {
+    margin-top: 20px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.outputImg {
+    max-width: 500px;
+    object-fit: cover;
+}
+.outputMass {
+    font-size: 2rem;
 }

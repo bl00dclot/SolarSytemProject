@@ -42,7 +42,7 @@ function getMassPlanet() {
     
     function calculateMass (planetMass, objectMass) {
             let mass = objectMass * ( planetMass / (solarSystem[2].gravity) );
-            return mass;
+            return Number.parseFloat(mass).toFixed(2) + `kg`;
     };
     
     
